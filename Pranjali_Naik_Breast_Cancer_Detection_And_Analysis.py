@@ -23,7 +23,6 @@ from sklearn.metrics import confusion_matrix
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 import glob
-from AkshayBreastCancerAnalysis import classification_model
 
 #This function reads the images from the "img_Pranjali" folder and detects the blob present in the image using
 #the difference of gaussian function and stores it as a sequence.
@@ -120,10 +119,6 @@ def split_data():
     predict(X_train, y_train, X_test, y_test)
 
     train, test = train_test_split(df, test_size=0.25)
-
-    print("Results from Logistic Refression using team mate's function:")
-    classification_model(model=LogisticRegression(),data=train,predictors=data_mw,outcome=target)
-
     heatmap(data)
 
 #This function is used to predict the accuracy of the data
