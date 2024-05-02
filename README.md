@@ -8,5 +8,5 @@
 #### 3) The mammogram images with area of the mass > mean(area) is labelled as Malignant and others as Benign.
 #### 4) The resulting dataset is then used to design a ML model to predict future mammogram images based on all available features.
 
-#### **Algorithm used:**:
+#### **Algorithm used:**
 #### Random Forest Classifier algorithm is used to train a machine learning model to classify the breast cancer features data.
