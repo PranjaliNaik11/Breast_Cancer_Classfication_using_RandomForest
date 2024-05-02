@@ -83,14 +83,14 @@ def find_parameters(sequence):
 #This function creates a new csv file and then stores the paramter values into the
 # CSV file.
 def write_into_csv(row):
-    with open('Pranjali_Data.csv', 'a') as newFile:
+    with open('Feature_Data.csv', 'a') as newFile:
         newFile.write(row)
 
 #This function is used to add the required headers to the CSV file and then
 #prepare it for the further analysis.
 def prepare():
-    with open('Pranjali_Data.csv', 'r') as original: data = original.read()
-    with open('Pranjali_Data.csv', 'w') as modified: modified.write("x,y,radius,perimeter,area,compactness\n" + data)
+    with open('Feature_Data.csv', 'r') as original: data = original.read()
+    with open('Feature_Data.csv', 'w') as modified: modified.write("x,y,radius,perimeter,area,compactness\n" + data)
     t = pd.read_csv('Pranjali_Data.csv')
     mean = t['area'].mean()
 
@@ -102,8 +102,6 @@ def prepare():
 #This funcrion is used to split the data into train and test data based on
 # the predictors and target parameters.
 def split_data():
-    from sklearn.linear_model import LogisticRegression
-
     data = pd.read_csv('Pranjali_Data.csv')
     df=pd.DataFrame(data,columns=['x', 'y', 'radius', 'perimeter', 'area', 'compactness','diagnosis'])
 
